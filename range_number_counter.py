@@ -5,6 +5,9 @@
 # 31-40 = ?
 # 41-50 = ?
 
+import colorama #adding color for text
+from colorama import Fore, Back, Style
+
 #Use array to store the user's number
 range_number = { #this is for the range
     "1-10": 0,
@@ -19,15 +22,15 @@ user_input = {} #this is to store the inputted numbers and to track
 #Use loop to ask the user to input their number from 1-50
 while True:
     try:
-        user_number = int(input("Choose a number from 1-50: "))
+        user_number = int(input(f"Choose a number from {Fore.BLUE}{Style.BRIGHT}1-50{Style.RESET_ALL}: "))
         
         #Adding a condition for invalid inputs
         if user_number < 1 or user_number > 50: #will stop if the number is less than 1 or greater than 5
-            print("Invalid number.") 
+            print(f"{Fore.RED}Invalid number.{Style.RESET_ALL}") 
             break
         
         if user_number in user_input: #will stop if the number is already used
-            print("You already used this number.")
+            print(f"{Fore.RED}You already used this number.{Style.RESET_ALL}")
             break
         
         user_input[user_number] = True
@@ -48,5 +51,6 @@ while True:
         break
     
 #Print the result of how many inputted numbers are there in the given range
+print(f"{Back.GREEN}{Fore.BLACK}Count of inputted numbers in each range{Style.RESET_ALL}")
 for range, value in range_number.items():
-    print(f"{range}: {value}")
+    print(f"{Fore.CYAN}{range}{Style.RESET_ALL}: {value}")
