@@ -32,6 +32,7 @@ while True:
 
     except:
         break
+    
 #Print the result of how many inputted numbers are there in the given range
 for range, value in range_number.items():
     print(f"{range}: {value}")
