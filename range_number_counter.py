@@ -19,17 +19,19 @@ while True:
     try:
         user_number = int(input("Choose a number from 1-50: "))
         
-        if 1 >= user_number <= 10:
+        if user_number >= 1 and user_number <= 10:
             range_number["1-10"] += 1
-        if 11 >= user_number <= 20:
+        if user_number >= 11 and user_number <= 20:
             range_number["11-20"] += 1
-        if 21 >= user_number <= 30:
+        if user_number >= 21 and user_number <= 30:
             range_number["21-30"] += 1
-        if 31 >= user_number <= 40:
+        if user_number >= 31 and user_number <= 40:
             range_number["31-40"] += 1
-        if 41 >= user_number <= 50:
+        if user_number >= 41 and user_number <= 50:
             range_number["41-50"] += 1
-        
+
     except:
         break
 #Print the result of how many inputted numbers are there in the given range
+for range, value in range_number.items():
+    print(f"{range}: {value}")
