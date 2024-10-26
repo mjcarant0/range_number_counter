@@ -6,7 +6,7 @@
 # 41-50 = ?
 
 #Use array to store the user's number
-range_number = {
+range_number = { #this is for the range
     "1-10": 0,
     "11-20": 0,
     "21-30": 0,
@@ -14,15 +14,23 @@ range_number = {
     "41-50": 0
 }
 
+user_input = {} #this is to store the inputted numbers and to track
+
 #Use loop to ask the user to input their number from 1-50
 while True:
     try:
         user_number = int(input("Choose a number from 1-50: "))
         
         #Adding a condition for invalid inputs
-        if user_number < 1 or user_number > 50:
+        if user_number < 1 or user_number > 50: #will stop if the number is less than 1 or greater than 5
             print("Invalid number.") 
             break
+        
+        if user_number in user_input: #will stop if the number is already used
+            print("You already used this number.")
+            break
+        
+        user_input[user_number] = True
         
         #Adding 1 in range_number's value in every input of the user
         if user_number >= 1 and user_number <= 10:
