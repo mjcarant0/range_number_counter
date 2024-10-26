@@ -19,6 +19,12 @@ while True:
     try:
         user_number = int(input("Choose a number from 1-50: "))
         
+        #Adding a condition for invalid inputs
+        if user_number < 1 or user_number > 50:
+            print("Invalid number.") 
+            break
+        
+        #Adding 1 in range_number's value in every input of the user
         if user_number >= 1 and user_number <= 10:
             range_number["1-10"] += 1
         if user_number >= 11 and user_number <= 20:
